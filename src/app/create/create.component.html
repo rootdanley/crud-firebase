@@ -1,0 +1,23 @@
+<form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="question">Question:</label>
+    <input type="text" id="question" formControlName="question">
+  </div>
+  <div *ngIf="dataForm.controls['question'].invalid && dataForm.controls['question'].touched">
+    Question is required.
+  </div>
+
+  <div>
+    <label for="answer">Answer:</label>
+    <input type="text" id="answer" formControlName="answer">
+  </div>
+  <div *ngIf="dataForm.controls['answer'].invalid && dataForm.controls['answer'].touched">
+    Answer is required.
+  </div>
+
+  <button type="submit" [disabled]="!dataForm.valid">Submit</button>
+</form>
+
+
+<br>
+

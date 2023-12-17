@@ -1,0 +1,14 @@
+<form [formGroup]="deleteForm" (ngSubmit)="onDelete()">
+  <div>
+    <label for="docId">Document ID:</label>
+    <input type="text" id="docId" formControlName="docId">
+    <div *ngIf="deleteForm.get('docId')">
+      ID is required.
+    </div>
+  </div>
+  <button type="submit" [disabled]="deleteForm.invalid">Delete</button>
+</form>
+
+<div *ngFor="let item of items">
+  <p>ID: {{ item.id }}, Question: {{ item.pergunta }}, Answer: {{ item.resposta }}</p>
+</div>

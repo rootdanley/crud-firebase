@@ -1,0 +1,15 @@
+<form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+  <div>
+    <label for="docId">Document ID:</label>
+    <input type="text" id="docId" formControlName="docId">
+  </div>
+  <div>
+    <label for="newQuestion">New Question:</label>
+    <input type="text" id="newQuestion" formControlName="newQuestion">
+  </div>
+  <div>
+    <label for="newAnswer">New Answer:</label>
+    <input type="text" id="newAnswer" formControlName="newAnswer">
+  </div>
+  <button type="submit" [disabled]="updateForm.invalid">Update</button>
+</form>
